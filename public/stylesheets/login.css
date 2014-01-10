@@ -1,0 +1,44 @@
+.submit-button{
+    background-color: #E8155C;
+    width: 627px;
+    height: 30px;
+    border-radius: 3px;
+    font-family: heiti sc;
+    position: absolute;
+    padding-top: 7px;
+    box-sizing: border-box;
+    left:2px;
+    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none; /* From IE10 only */
+    user-select: none; /* Not valid CSS yet, as of July 2012 */
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-drag: none;
+    cursor:default;
+}
+.submit-button:hover{
+    background-color:#C51550;
+}
+input[type=text]{
+    border: 1px solid #E8155C;
+    border-radius: 3px;
+    font-family: heiti sc;
+    font-size:30px;
+}
+input[type=text]:selected{
+        -webkit-box-shadow: 5px 5px 5px #666;
+    -moz-box-shadow: 5px 5px 5px #666;
+}
+input[type=password]{
+    border: 1px solid #E8155C;
+    border-radius: 3px;
+    font-family: heiti sc;
+    font-size:30px;
+}
+.login-container{
+    position:absolute;
+    top:calc(50% - 156px);
+    text-align:center;
+    width:559px;
+    left: calc(50% - 279.5px);
+}

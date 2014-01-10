@@ -1,0 +1,114 @@
+html, body{
+    height:100%;    
+}
+@font-face {
+	font-family: OFL MTT;
+	src: url('/fonts/OFLGoudyStMTT.ttf');
+}
+.sidebar-container{
+    position: fixed;
+    border-right: 5px solid #E8155C;
+    width: 182px;
+    height: calc(100% + 12px);
+    margin-top:-10px;
+}
+.sidebar-border{
+    height:100%;
+    width:calc(100% - 5px);
+    border-right:5px solid black;
+}
+.logo-container{
+    text-align:center;
+    margin-top:10px;
+}
+.logo-pink{
+    padding: 10px 12px 10px 10px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    margin-left:-10px;
+    margin-top:10px;
+    width:120px;
+    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none; /* From IE10 only */
+    user-select: none; /* Not valid CSS yet, as of July 2012 */
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-drag: none;
+}
+.nav-container{
+    margin-top:30px;
+}
+.bar-black{
+    height:0px;
+    width: 85%;
+    border: 3px solid black;
+    margin: 5px;
+}
+.nav-text-container{
+    text-align:center;
+    font-family: OFL MTT;
+    font-size:35px;
+    width:90%;
+    height:170px;
+}
+.nav-text{
+    display:block;
+    text-decoration:none;
+    color:black;
+    margin:-11px;
+}
+.nav-text:hover{
+    display:block;
+    color:#E8155B;
+    text-decoration:none;
+}
+.page-main{
+    margin-left:187px;
+    height:100%;
+    margin-top:-10px;
+}
+.content-wrapper{
+    position:relative;
+    height:100%;
+    width:100%;
+    overflow:scroll;
+}
+.content-container{
+    position:absolute;
+    top:calc(50% - 156px);
+    text-align:center;
+    width:559px;
+    left: calc(50% - 279.5px);
+}
+.bar-black-wide{
+    text-align:center;
+    height:0px;
+    width: 100%;
+    border: 3px solid black;
+    margin: 10px auto;
+}
+#top{
+    margin-top:0px;
+    margin-bottom:30px;
+}
+#bottom{
+    margin-bottom:0px;
+}
+.statement{
+    font-family: OFL MTT;
+    font-size:20px;
+    font-style:italic;
+    font-weight:300;
+    margin-bottom: 30px;
+    opacity: .5;
+}
+.logo-green{
+    margin-bottom:25px;
+    width:500px;
+    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none; /* From IE10 only */
+    user-select: none; /* Not valid CSS yet, as of July 2012 */
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-drag: none;
+}

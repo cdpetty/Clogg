@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    script(src='/javascript/jQuery.min.js')
+    script(src='/javascript/client.js')
+    .login-container
+        form(method='post', action='/login')
+            input.user(type='text', name='user', placeholder='Username')
+            input.pass(type='password', name='pass', placeholder='Password')
+            .submit-button Login

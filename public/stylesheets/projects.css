@@ -1,0 +1,22 @@
+.bar-black-wide{
+    text-align:center;
+    height:0px;
+    width: 100%;
+    border: 3px solid black;
+    margin: 10px auto;
+}
+#top{
+    margin-top:0px;
+    margin-bottom:30px;
+}
+#bottom{
+    margin-bottom:0px;
+}
+.projects-notification{
+    font-family: OFL MTT;
+    font-size: 40px;
+}
+.no-dec{
+    text-decoration:none;
+    color: #E8155C;
+}

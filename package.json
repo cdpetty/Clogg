@@ -1,0 +1,17 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.7",
+    "jade": "*",
+    "mongojs": "~0.9.10",
+    "express-markdown": "0.0.6",
+    "marked": "~0.3.0",
+    "node-cache": "~0.4.0",
+    "memory-cache": "0.0.5"
+  }
+}

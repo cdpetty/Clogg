@@ -1,0 +1,35 @@
+.bar-black-wide{
+    text-align:center;
+    height:0px;
+    width: 100%;
+    border: 3px solid black;
+    margin: 10px auto;
+}
+#top{
+    margin-top:0px;
+    margin-bottom:30px;
+}
+#bottom{
+    margin-bottom:0px;
+}
+.name-intro{
+    font-family:heiti sc;
+    font-size:40px;
+    display:inline;
+}
+.name{
+    font-family:heiti sc;
+    font-size:40px;
+    color: #E8155C;
+    display:inline;
+}
+#period-black{
+    font-family:heiti sc;
+    font-size:40px;
+    display:inline; 
+}
+.message{
+    font-family:OFL MTT;
+    font-size:30px;
+    margin-top:20px;
+}

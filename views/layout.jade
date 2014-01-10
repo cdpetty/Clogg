@@ -1,0 +1,30 @@
+doctype html
+html
+    head
+        style
+            include ../public/stylesheets/style.css
+            include ../public/stylesheets/posts.css
+            include ../public/stylesheets/me.css
+            include ../public/stylesheets/projects.css
+            include ../public/stylesheets/login.css
+        title Clog
+        //link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
+    body
+        .sidebar-container
+            .sidebar-border
+                .logo-container
+                    a(href='/clog')
+                        img(src='/images/logo-letter-pink.png', class='logo-pink')
+                .nav-container
+                    .bar-black
+                    .nav-text-container
+                        a.nav-text#posts(href='/posts') posts
+                        a.nav-text#me(href='/me') me
+                        a.nav-text#projects(href='/projects') projects
+                        a.nav-text#git(href='http://www.github.com/notyalc') git
+                    .bar-black
+                .archive-container
+        .page-main
+            .content-wrapper
+                block content
+                
