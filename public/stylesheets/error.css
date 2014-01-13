@@ -1,0 +1,13 @@
+.error-container{
+    height:100%;
+}
+.error-text{
+    top: calc(50% - 138px);
+    font-size: 200px;
+    color: #E8155C;
+    font-family: heiti sc;
+    position: absolute;
+    left: calc(50% - 201.5px);
+    border: 15px solid #E8155C;
+    padding: 20px;
+}

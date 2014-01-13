@@ -7,8 +7,9 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
-var app = express();
 var fs = require('fs');
+var app = express();
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -20,8 +21,26 @@ app.use(express.bodyParser());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
-
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(function(req,res,next){
+    res.status(404);
+    res.render('error');
+});
+
+
+var databaseUrl = 'clogdb';
+var collections = ['posts'];
+var db = require('mongojs').connect(databaseUrl, collections);
+db.posts.find(function(err, items){
+    if (err) console.log('Error was: ' + err);
+    var temp = [];
+    items.forEach(function(post){
+        temp.push(post.title);
+    });
+    var titles = switchOrder(temp);
+    app.locals({archives:titles});
+});
+
 
 // development only
 if ('development' == app.get('env')) {
@@ -36,6 +55,7 @@ app.get('/projects', routes.projects);
 app.all('/login', routes.login);
 app.all('/test', routes.test);
 app.get('/addpost', routes.addpost);
+app.get('/post/:postname', routes.individualPosts);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
@@ -55,6 +75,14 @@ function getDate(){
     return formatedDate;
 }
 
+function switchOrder(posts){
+    var finalPosts = [];
+    for(var x = posts.length -1; x >=0; x--){
+        finalPosts.push(posts[x]);
+    }
+    return finalPosts;
+}
+
 fs.watch('posts', function(event, filename){
     if(event){
         fs.readFile('posts/' + filename, function (err, data) {
@@ -63,28 +91,75 @@ fs.watch('posts', function(event, filename){
                 var dataString = data.toString();
                 var marked = require('marked');
                 var htmlString = marked(dataString);
-                
                 var databaseUrl = 'clogdb';
                 var collections = ['posts'];
                 var db = require('mongojs').connect(databaseUrl, collections);
-                db.posts.save({title:filename, date:getDate(), post:htmlString}, function(err, saved){
-                    if (err) console.log('Error saving: ' + err);
-                    console.log('post saved');
+                db.posts.find({title:filename}, function(err, found){
+                    if (err) console.log('Erorr finding: ' + err);
+                    if(found.length >0){
+                        console.log('post found about to be updated');
+                        db.posts.update({title:filename}, {post:htmlString, title:filename, date:getDate()}, function(err, updated){
+                            if (err) console.log('Error Updating: ' + err);
+                            db.posts.find(function(err, items){
+                                if (err) console.log('Error was: ' + err);
+                                var titles = [];
+                                items.forEach(function(post){
+                                    titles.push(post.title);
+                                });
+                                var postTitles = switchOrder(titles);
+                                app.locals({archives:postTitles});
+                            });
+                        });
+                    }
+                    else{
+                        console.log('post not found');
+                        db.posts.save({title:filename, date:getDate(), post:htmlString, realDate:new Date()}, function(err, saved){
+                            if (err) console.log('Error saving: ' + err);
+                            db.posts.find(function(err, items){
+                                if (err) console.log('Error was: ' + err);
+                                var titles = [];
+                                items.forEach(function(post){
+                                    titles.push(post.title);
+                                });
+                                var postTitles = switchOrder(titles);
+                                app.locals({archives:postTitles});
+                            });
+                        });
+                    }
                     var cache = require('memory-cache');
-                    console.log('cache loaded');
-                    db.posts.find().toArray(function(err, items){
+                    db.posts.find(function(err, items){
                         if (err) console.log('Error was: ' + err);
-                        console.log('WORKINGW ASLKDFJ ALSKDJF  OIAJWE FOIAJW EFFOKAJW EOFIJA SLDFKSLDKFJ ASLDKFJ ASLDKFJ ASLDKFJ ASLDKFJ');
-                        console.log('post in app.js is: ' + cache.get('posts'));
-                        cache.put('posts', 'asdf');
+                        var temp = [];
+                        items.forEach(function(post){
+                            temp.push(post);
+                        });
+                        var posts = switchOrder(temp);
+                        var cache = require('memory-cache');
+                        cache.put('posts', posts);
+                        console.log('cache updated');
                     });
                 });
 
-                db.close();
+                var cache = require('memory-cache');
+                db.posts.find(function(err, items){
+                    if (err) console.log('Error was: ' + err);
+                    var temp = [];
+                    var titles = [];
+                    items.forEach(function(post){
+                        temp.push(post);
+                        titles.push(post.title);
+                    });
+                    var posts = switchOrder(temp);
+                    var cache = require('memory-cache');
+                    cache.put('posts', posts);
+                    app.locals({archives:titles});
+                });
             }
             else console.log('No error or data');
+            
+            console.log('File: ' + filename + ' changed! With event: ' + event);
         });
-        console.log('File: ' + filename + ' changed! With event: ' + event);
+        
     }
     
 });

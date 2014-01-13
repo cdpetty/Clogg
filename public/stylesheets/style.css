@@ -112,3 +112,43 @@ html, body{
     -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
     user-drag: none;
 }
+.archive-wrapper{
+    position: absolute;
+    left: 3%;
+    width: 152px;
+    height: 300px;
+    margin-top: 15px;
+    border: 2px solid black;
+}
+.archive-logo{
+    border: 2px solid #E8155B;
+    height: 30px;
+    width: 134px;
+    margin: 4px auto;
+    text-align: center;
+}
+.archive-logo-text{
+    font-family: heiti sc;
+    font-size:30px;
+}
+.archive-container{
+    font-family:OFL MTT;
+    font-size:20px;
+    padding:5px;
+    height:240px;
+    overflow:scroll;
+    margin-top:8px;
+    word-break:break-all;
+}
+ul{
+    margin-top: 0px;
+    margin-left: -16px;
+}
+.archiveLink{
+    text-decoration:none;
+    color:black;
+}
+.archiveLink:hover{
+    text-decoration:underline;
+    color:#E8155B;
+}

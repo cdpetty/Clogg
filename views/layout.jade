@@ -1,14 +1,13 @@
 doctype html
 html
     head
-        style
-            include ../public/stylesheets/style.css
-            include ../public/stylesheets/posts.css
-            include ../public/stylesheets/me.css
-            include ../public/stylesheets/projects.css
-            include ../public/stylesheets/login.css
+        link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
+        link(rel='stylesheet', href='/stylesheets/posts.css', type='text/css')
+        link(rel='stylesheet', href='/stylesheets/me.css', type='text/css')
+        link(rel='stylesheet', href='/stylesheets/projects.css', type='text/css')
+        link(rel='stylesheet', href='/stylesheets/login.css', type='text/css')
+        link(rel='stylesheet', href='/stylesheets/error.css', type='text/css')
         title Clog
-        //link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
     body
         .sidebar-container
             .sidebar-border
@@ -23,7 +22,14 @@ html
                         a.nav-text#projects(href='/projects') projects
                         a.nav-text#git(href='http://www.github.com/notyalc') git
                     .bar-black
-                .archive-container
+                .archive-wrapper
+                    .archive-logo 
+                        span.archive-logo-text The Past
+                    .archive-container
+                        ul
+                            each val in archives
+                                li
+                                    a.archiveLink(href='/post/' + val)=val
         .page-main
             .content-wrapper
                 block content
