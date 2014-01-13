@@ -85,6 +85,7 @@ function switchOrder(posts){
 
 fs.watch('posts', function(event, filename){
     if(event){
+        console.log('Event Watched!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
         fs.readFile('posts/' + filename, function (err, data) {
             if (err) console.log('Error reading data: ' + err);
             else if (data){

@@ -16,6 +16,7 @@ html, body{
     height:100%;
     width:calc(100% - 5px);
     border-right:5px solid black;
+    margin-top: -10px;
 }
 .logo-container{
     text-align:center;
@@ -62,6 +63,9 @@ html, body{
     color:#E8155B;
     text-decoration:none;
 }
+#below-git{
+    margin-top:14px;
+}
 .page-main{
     margin-left:187px;
     height:100%;
@@ -71,7 +75,7 @@ html, body{
     position:relative;
     height:100%;
     width:100%;
-    overflow:scroll;
+    overflow-x:hidden;
 }
 .content-container{
     position:absolute;
@@ -114,9 +118,9 @@ html, body{
 }
 .archive-wrapper{
     position: absolute;
-    left: 3%;
+    left:3%;
     width: 152px;
-    height: 300px;
+    height: 40%;
     margin-top: 15px;
     border: 2px solid black;
 }
@@ -135,10 +139,12 @@ html, body{
     font-family:OFL MTT;
     font-size:20px;
     padding:5px;
-    height:240px;
-    overflow:scroll;
+    height:calc(100% - 60px);
+    overflow-y:scroll;
+    overflow-x:hidden;
     margin-top:8px;
-    word-break:break-all;
+    word-break:break-word;
+    
 }
 ul{
     margin-top: 0px;
@@ -151,4 +157,32 @@ ul{
 .archiveLink:hover{
     text-decoration:underline;
     color:#E8155B;
+}
+/*::-webkit-scrollbar { 
+    display: none; 
+}*/
+::-webkit-scrollbar {
+    height: 15px;
+    width: 15px
+}
+
+::-webkit-scrollbar-button {
+    height: 0;
+    width: 0
+}
+
+::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    background-color: rgba(232, 21, 91,1);
+    border: 5px solid transparent;
+    border-radius: 10px;
+    min-height: 20px;
+    min-width: 20px;
+    height: 5px;
+    width: 5px
+
+}
+
+::-webkit-scrollbar-thumb: hover,::-webkit-scrollbar-thumb: active {
+    background-color: rgba(0, 0, 0, .4)
 }
