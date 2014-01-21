@@ -10,7 +10,6 @@ html, body{
     border-right: 5px solid #E8155C;
     width: 182px;
     height: calc(100% + 12px);
-    margin-top:-10px;
 }
 .sidebar-border{
     height:100%;
