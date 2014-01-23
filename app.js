@@ -9,7 +9,9 @@ var http = require('http');
 var path = require('path');
 var fs = require('fs');
 var app = express();
+var httpProxy = require('http-proxy');
 
+var proxy = httpProxy.createProxyServer({target:'http://localhost:3000'}).listen(80);
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -56,7 +58,7 @@ app.all('/login', routes.login);
 app.all('/test', routes.test);
 app.get('/addpost', routes.addpost);
 app.get('/post/:postname', routes.individualPosts);
-app.set('port', 80);
+//app.set('port', 80);
 console.log(app.get('port'));
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
