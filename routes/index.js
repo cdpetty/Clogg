@@ -2,6 +2,7 @@
 /*
  * GET home page.
  */
+exports.tgb = require('./tgb')
 exports.posts = require('./posts');
 exports.me = require('./me');
 exports.clog = require('./clog');

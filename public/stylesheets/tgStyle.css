@@ -1,0 +1,151 @@
+body{
+    background-color: rgb(42,42,42);
+}
+.name-container{
+    height: 162px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.name{
+    font-family: Harrington, Heiti SC, Arial;
+    font-weight: bold;
+    color: white;
+    font-size: 87px;
+}
+.nav-bar{
+    height: 40px;
+    width: 510px;
+    margin: 0px auto 30px;
+    font-family: Harrington, Heiti SC;
+    font-size:31px;
+    text-align: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor:pointer;
+}
+
+.speed{
+    position: absolute;
+    background-color: blue;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 40px;
+    width: 166px;
+}
+
+.weight{
+    position: absolute;
+    background-color: blue;
+    height: 40px;
+    width: 166px;
+    margin-left: 168px;
+}
+
+.cost{
+    position: absolute;
+    background-color: blue;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 40px;
+    width: 166px;
+    margin-left: 336px;
+}
+
+.speed:hover, .weight:hover, .cost:hover{
+    background-color:rgba(0, 0, 255, 0.74);
+}
+
+.top-wrapper{
+    min-width:882px;
+    height: 242px;
+    width: 100%;
+    text-align:center;
+}
+
+.bar-divide{
+    width: 94%;
+    height: 2px;
+    margin: 20px auto;
+    background-color: blue;
+}
+
+.bottom-wrapper{
+    min-width:882px;
+    height: 242px;
+    width: 100%;
+    text-align:center;
+}
+
+.number-wrapper{
+    height: 100%;
+    width: 80%;
+    background-color: black;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 19px;
+    box-sizing: border-box;
+    display:inline-block;
+
+}
+
+.unit-container{
+    font-family: Heiti SC;
+    font-size: 48px;
+    color: white;
+    text-decoration: underline;
+    display: inline-block;
+    margin-left: 25px;
+    width:69px;
+}
+
+.in-out-container{
+    height: 100%;
+    width: 100%;
+    font-size:228px;
+    color:white;
+    font-family:Heiti SC;
+    overflow:hidden;
+}
+
+.number-input{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: black;
+    border: solid black;
+    color: white;
+    display:block;
+    font-size:173px;
+    outline:none;
+}
+    
+
+.type-indicator{
+    height:98%;
+    width:2px;
+    margin-left:7px;
+    background-color:white;
+    display:inline-block;
+}
+.number{
+    display:inline-block;
+}
+
+.signoff-container{
+    position: absolute;
+    width: 100%;
+    margin-top:88px;
+    text-align: center;
+}
+
+.sign-off{
+    color: rgba(116, 115, 115, 1);
+    font-family: Harrington, Heiti SC, Arial;
+    font-size: 28px;
+}

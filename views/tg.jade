@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/tgStyle.css')
+    body
+        script(src='/javascript/jQuery.min.js')
+        script(src='/javascript/tgClient.js')
+        .name-container
+            span.name #TGB
+        .nav-bar
+            .speed
+                span Speed
+            .weight
+                span Weight
+            .cost
+                span Cost
+        .conversion-container
+            .top-wrapper
+                .number-wrapper
+                    .in-out-container#top-in-out
+                        input.number-input#top-input(type='text')
+                .unit-container#top
+            .bar-divide
+            .bottom-wrapper
+                .number-wrapper
+                    .in-out-container#bottom-in-out
+                        input.number-input#bottom-input(type='text')
+                .unit-container#bottom
+        .signoff-container
+            span.sign-off #TopGearBuddy
