@@ -1,6 +1,10 @@
 html, body{
     height:100%;    
 }
+
+body{
+  overflow:hidden;
+}
 @font-face {
 	font-family: OFL MTT;
 	src: url('/fonts/OFLGoudyStMTT.ttf');
